@@ -1,14 +1,16 @@
 import React from 'react';
 
-import Dashboard from './pages/Dashboard';
+// components
+import Layout from './components/Layout'
 
+// styles
 import Global from './styles/global';
 
 const App: React.FC = () => {
   return (
     <React.Fragment>
       <Global />
-      <Dashboard />
+      <Layout />
     </React.Fragment>
   )
 }
