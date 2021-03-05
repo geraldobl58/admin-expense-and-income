@@ -9,7 +9,7 @@ export default createGlobalStyle`
 
     html, body, #root {
         height: 100%;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Montserrat', sans-serif;     
     }
 
     button: {
