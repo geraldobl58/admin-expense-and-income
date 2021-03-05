@@ -4,6 +4,9 @@ import { ThemeProvider } from 'styled-components';
 // components
 import Layout from './components/Layout'
 
+// pages
+import Dashboard from './pages/Dashboard'
+
 // styles
 import Global from './styles/global';
 
@@ -14,7 +17,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={dark}>
       <Global />
-      <Layout />
+      <Layout>
+        <Dashboard />
+      </Layout>
     </ThemeProvider>
   )
 }
