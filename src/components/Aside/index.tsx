@@ -26,13 +26,13 @@ const Aside: React.FC = () => {
                 <Title>Receita e Despesas</Title>
             </Header>
             <MenuContainer>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/dashboard/">
                     <MdDashboard /> Dashboard
                 </MenuItemLink>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/list/entry-balance">
                     <MdArrowUpward /> Entrada Renda
                 </MenuItemLink>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/list/exit-balance">
                     <MdArrowDownward /> Saída Despesa
                 </MenuItemLink>
                 <MenuItemLink href="#">
