@@ -1,10 +1,14 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput';
 import FinancialCard from '../../components/FinancialCard';
 
 import { Container, Content, Filters } from './styles';
+
+import gains from '../../repositories/gains';
+import expenses from '../../repositories/expenses';
+
 interface IRouteParams {
     match: {
         params: {
@@ -13,7 +17,17 @@ interface IRouteParams {
     }
 }
 
+interface IData {
+    id: string;
+    description: string;
+    amountFormatted: string;
+    frequency: string;
+    dateFormatted: string;
+    tagColor: string;
+}
+
 const List: React.FC<IRouteParams> = ({ match }) => {
+    const [data, setData] = useState<IData[]>([]);
 
     const { type } = match.params;
 
@@ -39,6 +53,24 @@ const List: React.FC<IRouteParams> = ({ match }) => {
         { value: 2023, label: 2023 },
     ];
 
+    const listData = useMemo(() => {
+        return type === 'entry-balance' ? gains : expenses;
+    }, [type]);
+
+    useEffect(() => {
+        const response = listData.map((item) => {
+            return {
+                id: String(Math.random() * data.length),
+                description: item.description,
+                amountFormatted: item.amount,
+                frequency: item.frequency,
+                dateFormatted: item.date,
+                tagColor: item.frequency === 'recorrente' ? '#4e41f0' : '#e44c4e'
+            }
+        });
+        setData(response);
+    }, []);
+
     return (
         <Container>
             <ContentHeader title={customTitle.title} lineColor={customTitle.lineColor}>
@@ -60,12 +92,15 @@ const List: React.FC<IRouteParams> = ({ match }) => {
                 </button>
             </Filters>
             <Content>
-                <FinancialCard 
-                    tagColor='#e44c4e'
-                    title='Conta de Luz'
-                    subtitle='05/03/2021'
-                    amount='R$100,00'
-                />
+                {data.map((item) => (
+                    <FinancialCard
+                        key={item.id} 
+                        tagColor={item.tagColor}
+                        title={item.description}
+                        subtitle={item.dateFormatted}
+                        amount={item.amountFormatted}
+                    />
+                ))}
             </Content>
         </Container>
     )
