@@ -5,6 +5,7 @@ import SelectInput from '../../components/SelectInput';
 import WalletBox from '../../components/WalletBox';
 import MessageBox from '../../components/MessageBox';
 import PieChartBox from '../../components/PieChartBox';
+import LineChartBox from '../../components/LineChartBox';
 
 import expenses from '../../repositories/expenses';
 import gains from '../../repositories/gains';
@@ -145,6 +146,48 @@ const Dashboard: React.FC = () => {
 
     }, [totalGains, totalExpenses]);
 
+    const lineChartData = useMemo(() => {
+        return listOfMonths.map((_, month) => {
+            
+            let amountEntry = 0;
+            gains.forEach(gain => {
+                const date = new Date(gain.date);
+                const gainMonth = date.getMonth();
+                const gainYear = date.getFullYear();
+
+                if (gainMonth === month && gainYear === yearSelected) {
+                    try {
+                        amountEntry += Number(gain.amount);
+                    } catch(error) {
+                        console.log(error);
+                    }
+                }
+            });
+
+            let amountOutput = 0;
+            expenses.forEach(expense => {
+                const date = new Date(expense.date);
+                const expenseMonth = date.getMonth();
+                const expenseYear = date.getFullYear();
+
+                if (expenseMonth === month && expenseYear === yearSelected) {
+                    try {
+                        amountOutput += Number(expense.amount);
+                    } catch(error) {
+                        console.log(error);
+                    }
+                }
+            });
+
+            return {
+                monthNumber: month,
+                month: listOfMonths[month].substr(0, 3),
+                amountEntry,
+                amountOutput
+            }
+
+        });
+    }, [yearSelected]);
 
     const handleMonthSelected = (month: string) => {
         try {
@@ -207,6 +250,11 @@ const Dashboard: React.FC = () => {
                     icon={message.icon}
                 />
                 <PieChartBox data={relationExpensesGains} />
+                <LineChartBox 
+                    data={lineChartData}
+                    lineColorAmountEntry='#f7931b'
+                    lineColorAmountOutput='#e44c4e'
+                />
             </Content>
         </Container>
     )

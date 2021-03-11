@@ -5,46 +5,42 @@ interface ILegendProps {
 }
 
 export const Container = styled.div`
-    width: 48%;
-    height: 260px;
-
-    margin: 10px 0;
+    width: 100%;
 
     color: ${props => props.theme.colors.white};
     background: ${props => props.theme.colors.tertiary};
 
-    border-radius: 5px;
+    margin: 10px 0;
+    padding: 30px 20px;
 
-    display: flex;
+    border-radius: 5px;
 `;
 
-export const SideLeft = styled.aside`
-    padding: 30px 20px;
+export const ChartContainer = styled.div`
+    width: 100%;
+    height: 450px;
+`;
+
+export const Header = styled.header`
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     > h2 {
         margin-bottom: 20px;
+        padding-left: 25px;
     }
+
 `;
 
 export const LegendContainer = styled.ul`
     list-style-type: none;
 
-    max-height: 175px;
-    padding-right: 15px;
-    overflow-y: scroll;
+    display: flex;
 
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: ${props => props.theme.colors.secondary};
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background-color: ${props => props.theme.colors.tertiary};
-    }
+    padding-right: 25px;
 `;
 
 export const Legend = styled.li<ILegendProps>`
@@ -52,6 +48,7 @@ export const Legend = styled.li<ILegendProps>`
     align-items: center;
 
     margin-bottom: 10px;
+    margin-left: 10px;
 
     > div {
         width: 50px;
@@ -69,10 +66,4 @@ export const Legend = styled.li<ILegendProps>`
     > span {
         margin-left: 10px;
     }
-`;
-
-export const SideRight = styled.main`
-    display: flex;
-    flex: 1;
-    justify-content: center;
 `;
