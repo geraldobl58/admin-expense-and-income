@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+import ToggleComponent from '../Toggle';
+
 export const Container = styled.div`
     grid-area: MAINHEADER;
 
@@ -20,3 +22,7 @@ export const Profile = styled.div`
 export const Welcome = styled.h3``;
 
 export const UserName = styled.span``;
+
+export const Toggle = styled(ToggleComponent)`
+    
+`;

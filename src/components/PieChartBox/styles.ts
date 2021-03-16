@@ -16,6 +16,11 @@ export const Container = styled.div`
     border-radius: 5px;
 
     display: flex;
+
+    @media (max-width: 770px) {
+        display: flex;
+        width: 100%;
+    }
 `;
 
 export const SideLeft = styled.aside`
@@ -23,6 +28,21 @@ export const SideLeft = styled.aside`
 
     > h2 {
         margin-bottom: 20px;
+    }
+
+    @media (max-width: 1345px) {
+        padding: 0 15px 5px;
+        margin-bottom: 7px;
+
+        > h2 {
+            margin-top: 15px;
+            margin-bottom: 7px;
+        }
+    }
+
+    @media (max-width: 420px) {
+        padding: 15px;
+        margin-bottom: 7px;
     }
 `;
 
@@ -75,4 +95,9 @@ export const SideRight = styled.main`
     display: flex;
     flex: 1;
     justify-content: center;
+
+    @media (max-width: 420px) {
+        width: 50%;
+        margin-left: -30px;
+    }
 `;
