@@ -94,7 +94,7 @@ Estrutura do projeto.
 8. **`package.json`**: Um arquivo é executado para projetos Node.js, que inclui itens como metadados (nome, autor do projeto etc.). Este arquivo é como o npm sabe quais pacotes instalar para o seu projeto.
 
 ## Link
-Link de acesso: [Aplicação em Produção](hhttps://admin-receita-despesas.netlify.app/)
+Link de acesso: [Aplicação em Produção](https://admin-receita-despesas.netlify.app/)
 
 ## Licença
 
