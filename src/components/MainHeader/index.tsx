@@ -25,8 +25,8 @@ const MainHeader: React.FC = () => {
     return (
         <Container>
             <Toggle 
-                labelLeft="Light"
-                labelRight="Dark"
+                labelLeft="Tema Claro"
+                labelRight="Tema Escuro"
                 checked={darkTheme}
                 onChange={handleChangeTheme}
             />

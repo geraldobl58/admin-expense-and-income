@@ -13,6 +13,13 @@ export const Container = styled.div`
 
     padding: 0 10px;
     border-bottom: 1px solid ${props => props.theme.colors.gray};
+
+    span {
+        font-size: 12px;
+        font-weight: 100;
+
+        text-transform: uppercase;
+    }
 `;
 
 export const Profile = styled.div`
@@ -24,5 +31,4 @@ export const Welcome = styled.h3``;
 export const UserName = styled.span``;
 
 export const Toggle = styled(ToggleComponent)`
-    
 `;
