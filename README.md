@@ -1,46 +1,101 @@
-# Getting Started with Create React App
+## Frontend React - Receita e Despesas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dashboard desenvolvido em ReactJs com TypeScript inteiramente componentizado com componentes puros.
 
-## Available Scripts
+## Requisitos
 
-In the project directory, you can run:
+```
+Nodejs >= 10
+```
+## Preview
 
-### `yarn start`
+<img src="./docs/assets/preview-desktop.gif" width="100%">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Não há banco de dados. Os dados são carregados de 2 arquivos que contém arrays simulando os repositórios de dados.
 
-### `yarn test`
+Layout & Componentes Responsivos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Como Iniciar?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Faça o clone do repositório.**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```
+      git clone https://github.com/geraldobl58/admin-expense-and-income.git
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.  **Instalação das dependências**
 
-### `yarn eject`
+   execute na pasta do projeto o seguinte comando:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    ```npm install ou yarn
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    após a instalação execute o seguinte comando.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```npm run start ou yarn start
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **Verificando no navegador**
 
-## Learn More
+    O projeto vai executar no seguinte endereço: `http://localhost:3000`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Techs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ - [x] React
+ - [x] React Router Dom
+ - [x] Styled Components
+ - [x] Typescript
+ - [x] React Icons
+ - [x] React Switch
+ - [x] Recharts
+ - [x] React Countup
+ - [x] Uuidv4
+ - [x] Html Semântico
+ - [x] Deploy Netlify
+
+## Diretórios
+
+Estrutura do projeto.
+
+    .
+    ├── node_modules
+    ├── src
+    ├──────── assets
+    ├──────── components
+    ├──────── hooks
+    ├──────── pages
+    ├──────── repositories
+    ├──────── routes
+    ├──────── styles
+    ├──────── utils
+    ├── .gitignore
+    ├── .prettierrc
+    ├── .editorconfig
+    ├── .eslint.js
+    ├── package.json
+    └── README.md
+
+1.  **`/node_modules`**: Este diretório contém todos os módulos de código dos quais seu projeto depende (pacotes npm) são instalados automaticamente.
+
+2.  **`/src`**: Este diretório conterá todo o código relacionado ao que você verá no front-end do site (o que você vê no navegador), como o cabeçalho do site ou um modelo de página. `src` é uma convenção para "código fonte ".
+
+3.  **`.gitignore`**: Este arquivo informa ao git quais arquivos ele não deve rastrear / não manter um histórico de versão.
+
+4.  **`.prettierrc`**: Este é um arquivo de configuração para Prettier é uma ferramenta para ajudar a manter a formatação do código consistente e para manter um padrão. [Prettier](https://prettier.io/).
+
+5.  **`.eslint.js`**: ESLint é uma ferramenta de análise de código estática para identificar padrões problemáticos encontrados no código JavaScript. [Eslint](https://eslint.org/).
+
+6.  **`.editorconfig`**: O EditorConfig ajuda a manter estilos de codificação consistentes para vários desenvolvedores que trabalham no mesmo projeto em vários editores e IDEs. [Editorconfig](https://editorconfig.org/)
+
+7. **`package-lock.json`** Este é um arquivo gerado automaticamente com base nas versões exatas das dependências do npm que foram instaladas para o seu projeto. ** (Você não altera este arquivo diretamente)**
+
+8. **`package.json`**: Um arquivo é executado para projetos Node.js, que inclui itens como metadados (nome, autor do projeto etc.). Este arquivo é como o npm sabe quais pacotes instalar para o seu projeto.
+
+## Link
+Link de acesso: [Aplicação em Produção](hhttps://admin-receita-despesas.netlify.app/)
+
+## Licença
+
+MIT
